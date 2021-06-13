@@ -59,6 +59,7 @@ nav {
   justify-self: end;
   align-self: center;
 }
+
 .logo {
   width: 5rem;
   align-self: center;
@@ -187,13 +188,13 @@ footer {
   color: var(--footer-text);
   justify-self: center;
 }
-.product ul {
+.product-footer ul {
   list-style: none;
 }
-.product ul li {
+.product-footer ul li {
   padding: 0.2rem 0;
 }
-.product h3 {
+.product-footer h3 {
   padding: 1rem 0;
 }
 .header-design {
@@ -212,68 +213,61 @@ footer {
     color: var(--text);
     padding-left: 2rem;
   }
-  .drop-down-title {
+
+  .dropdown {
     display: flex;
-    margin-right: 1rem;
+    justify-content: space-between;
   }
-  .dropdown ul {
-    display: flex;
+  .product,
+  .company,
+  .connect {
     position: relative;
   }
-  .dropdown ul li {
-    flex-direction: row;
-  }
-
-  .dropdown-content1 {
-    display: none;
+  .product ul,
+  .company ul,
+  .connect ul {
     position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    margin-top: 10px;
+    width: 100px;
+    height: 150px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: var(--text);
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: all 0.4s ease;
   }
-
-  .dropdown-content1 a {
+  .product a,
+  .company a,
+  .connect a {
     color: var(--very-dark-grayish-blue);
-    padding: 12px 16px;
     text-decoration: none;
-    display: block;
   }
-
-  .dropdown-content1 a:hover {
-    color: black;
+  .product a:hover,
+  .company:hover,
+  .connect:hover {
+    color: var(--very-dark-black-blue);
   }
-
-  .dropbtn-1:hover .dropdown-content {
-    display: block;
+  .dropdown button {
+    background: none;
+    border: none;
+    color: var(--text);
+    font-family: var(--font-overpass);
+    font-size: 1rem;
   }
-
-  .dropdown-content2 {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-  }
-
-  .dropdown-content2 a {
-    color: var(--very-dark-grayish-blue);
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-
-  .dropdown-content2 a:hover {
-    color: black;
-  }
-
-  .dropdown:hover .dropdown-content2 {
-    display: block;
-  }
-
-  .dropdown:hover .dropbtn {
+  .dropdown button:hover {
     text-decoration: underline;
+  }
+  .product button:focus + ul,
+  .connect button:focus + ul,
+  .company button:focus + ul {
+    opacity: 1;
+    pointer-events: 1;
+    transform: translateY(0);
   }
   .btn-reg {
     justify-self: end;
@@ -325,7 +319,7 @@ footer {
     display: block;
     background-color: var(--very-dark-blue);
     background-image: url(./images/bg-pattern-circles.svg);
-    background-size:contain;
+    background-size: contain;
     background-position: left -10rem;
     background-repeat: no-repeat;
     padding: 0 1rem;
@@ -370,7 +364,7 @@ footer {
   .footer-menu {
     display: flex;
   }
-  .product {
+  .product-footer {
     padding: 0 2rem;
   }
 }
