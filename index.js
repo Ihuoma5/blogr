@@ -1,21 +1,38 @@
-let menuIcon = document.getElementById('hamburger');
-let menuList = document.getElementById('menus');
-let grow= document.querySelector('.grow');
-let menu ='open';
-
-
-menuIcon.addEventListener('click', () =>{
-menuList.classList.toggle('show');
-if (menu === 'open'){
-       menuIcon.setAttribute('src', 'images/icon-close.svg');
-       grow.style.display ="none";
-       menu ='close';
+$(document).ready(function () {
+    var toggled = false;
+    $(".menu-toggle").click(function () {
+      toggled = !toggled;
+      $("nav").toggleClass("active");
+      if (toggled) {
+        $("#hambrgr").attr("src", "images/icon-close.svg");
+      } else {
+        $("#hambrgr").attr("src", "images/icon-hamburger.svg");
+      }
+    });
   
-    }
-        else {
-          menuIcon.setAttribute('src', 'images/icon-hamburger.svg');
-          grow.style.display ="block";
-          menu ='open';
-        }
-
-});
+    $("ul li").click(function () {
+      $(this).siblings().removeClass("active");
+      $(this).toggleClass("active");
+    });
+  
+    $(window).resize(function (e) {
+      if ($(window).width() < 990) {
+        $("#editor-image").each(function () {
+          $(this).attr("src", "images/illustration-editor-mobile.svg");
+        });
+      } else {
+        $("#editor-image").each(function () {
+          $(this).attr("src", "images/illustration-editor-desktop.svg");
+        });
+      }
+      if ($(window).width() < 990) {
+        $("#laptop-image").each(function () {
+          $(this).attr("src", "images/illustration-laptop-mobile.svg");
+        });
+      } else {
+        $("#laptop-image").each(function () {
+          $(this).attr("src", "images/illustration-laptop-desktop.svg");
+        });
+      }
+    });
+  });
