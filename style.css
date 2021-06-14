@@ -127,12 +127,13 @@ nav ul li.sub-menu::before {
 
 button {
   font-family: ubuntu, sans-serif;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 1rem;
   border: none;
   padding: 1rem 2rem;
   border-radius: 30px;
   cursor: pointer;
+
 }
 
 .login {
@@ -167,7 +168,7 @@ button {
 .main-text {
   font-family: ubuntu, sans-serif;
   font-weight: 400;
-  font-size: 5rem;
+  font-size: 3rem;
   color: hsl(0, 0%, 100%);
 }
 
@@ -179,7 +180,7 @@ button {
 }
 
 .intro-btn {
-  margin: 3rem 0;
+  margin: 1rem 0;
 }
 
 .learn-more {
@@ -383,9 +384,9 @@ footer {
   }
 }
 
-@media (max-width: 990px) {
+@media (max-width: 900px) {
   .intro-main-container {
-    height: 80vh;
+    height: 90vh;
   }
   .main-text {
     font-size: 3rem;
@@ -396,9 +397,14 @@ footer {
   .menu-toggle {
     display: block;
   }
-
+  .intro-btn{
+    display: flex;
+  }
   .intro-btn button {
     margin-top: 1rem;
+    margin-left: 2rem;
+    padding: 1rem;
+    justify-items: center;
   }
 
   .navigation {
@@ -483,4 +489,5 @@ footer {
     );
     color: white;
   }
+  
 }
